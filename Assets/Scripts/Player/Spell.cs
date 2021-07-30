@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spell : PlayerSkillDamage
+{
+    public GameObject Explosion=default;
+    public float speed = default;
+    void Start()
+    {
+        if (enemyLayer == (1 << LayerMask.NameToLayer("Enemy")))
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            transform.rotation = Quaternion.LookRotation(player.transform.forward);
+        }
+        else if (enemyLayer == (1 << LayerMask.NameToLayer("Player")))
+        {
+            GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+            transform.rotation = Quaternion.LookRotation(boss.transform.forward);
+        }
+        
+    }
+
+    internal override void Update()
+    {
+        base.Update();
+        transform.Translate(Vector3.forward*(speed*Time.deltaTime));
+        if (collided)
+        {
+            Instantiate(Explosion,transform.position,Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
+}
