@@ -1,5 +1,5 @@
 # RpgUnity3DProjectTraining
  **Rpg unity 3d project training**
-![RpgUnityProjectGameWindow](RpgUnityProjecGameWindow.png)
+![RpgUnityProjectGameWindow](RpgUnityProjectGameWindow.png)
 ![RpgUnityProjectInGame](RpgUnityProjectInGame.png)
-![RpgUnityProjectInScene](RpgUnityProjectInScene.png)
+![RpgUnityProjectInScene](RpgUnityProjectScene.png)
